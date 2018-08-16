@@ -126,6 +126,8 @@ namespace TestAddin.ACTIONS
 
 										if(tgt.Length > Useful.EXCEL_MAX_STR_LEN)
 											truncated = true;
+
+										return tgt;
 									}
 									return _long;
 								}
