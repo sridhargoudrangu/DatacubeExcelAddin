@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+	<!--
+	
+	This piece of xml will allow you to hook into the save button in the top left.
+	It's unnecessary since we hook the save in a different way
+	
+	<commands>
+		<command idMso="FileSave" onAction="InterceptSave"/>
+	</commands>
+	-->
+	<ribbon>
+		<tabs>
+			<tab idMso="TabData">
+				<group id="DataCubeRibbonGroup" getLabel="label_ribbonGroupLblDatacube" insertAfterMso="GroupPowerQueryData">
+					<button id="DataCubeRibbonGroupImportBtn" getLabel="label_ribbonGroupLblImport" imageMso="ImportMoreMenu" onAction="RibbonButtonClick" size="large" tag="import"/>
+					<button id="DataCubeRibbonGroupExportBtn" getLabel="label_ribbonGroupLblExport" imageMso="ExportMoreMenu" onAction="RibbonButtonClick" size="large" tag="export"/>
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+	<backstage>
+		<tab idMso="TabRecent">
+			<firstColumn>
+				<taskFormGroup idMso="GroupOpenPlaces">
+					<category idMso="ButtonCategoryRecentDocuments">
+						<task id="TaskButtonDataCube" imageMso="DatabaseCopyDatabaseFile" getLabel="label_TaskButtonDataCube" insertAfterMso="ButtonTaskRecentDocuments">
+							<group id="grpDataCubeLogin" getLabel="label_grpDataCubeLogin" getHelperText="htext_grpDataCubeLogin" getVisible="AreWeLoggedOut">
+								<primaryItem>
+									<button id="btnDataCubeLogin" imageMso="DatabasePermissionsMenu" getLabel="label_btnDataCubeLogin" onAction="Login"/>
+								</primaryItem>
+								<topItems>
+									<editBox id="edtDataCubeLoginHostname" getLabel="label_edtDataCubeLoginHostname" sizeString="WWWWWWWWWWWWWWWWWWWW" onChange="HostnameChanged"/>
+								</topItems>
+							</group>
+							<group id="grpDataCubeImport" getLabel="label_grpDataCubeImport" getHelperText="htext_grpDataCubeImport" getVisible="AreWeLoggedIn">
+								<primaryItem>
+									<!-- Do not remove the attribute 'tag' below -->
+									<button id="btnDataCubeImport" imageMso="ImportMoreMenu" getLabel="label_btnDataCubeImport" onAction="BackstageButtonClick" isDefinitive="true" tag="import"/>
+								</primaryItem>
+							</group>
+							<group id="grpDataCubeExport" getLabel="label_grpDataCubeExport" getHelperText="htext_grpDataCubeExport" getVisible="AreWeLoggedIn">
+								<primaryItem>
+									<!-- Do not remove the attribute 'tag' below -->
+									<button id="btnDataCubeExport" imageMso="ExportMoreMenu" getLabel="label_btnDataCubeExport" onAction="BackstageButtonClick" getEnabled="IsExportEnabled" isDefinitive="true" tag="export"/>
+								</primaryItem>
+							</group>
+							<group id="grpDataCubeLogout" getVisible="AreWeLoggedIn">
+								<topItems>
+									<layoutContainer id="lcDataCubeLogoutInfo" align="center" layoutChildren="horizontal">
+										<button id="btnDataCubeLogout" imageMso="DirectRepliesTo" getLabel="label_btnDataCubeLogout" onAction="Logout"/>
+										<imageControl id="icDataCubeLogoutInfo" imageMso="ReminderSound"/>
+										<labelControl id="lblDataCubeLogoutInfo" getLabel="label_lblDataCubeLogoutInfo"/>
+									</layoutContainer>
+									<layoutContainer id="lcDataCubeForgetInfo" align="center" layoutChildren="horizontal">
+										<button id="btnDataCubeForget" imageMso="TentativeAcceptInvitation" getLabel="label_btnDataCubeForget" onAction="ForgetCredentials" getVisible="AreCredentialsSaved"/>
+										<imageControl id="icDataCubeForgetInfo" imageMso="ReminderSound" getVisible="AreCredentialsSaved"/>
+										<labelControl id="lblDataCubeForgetInfo" getLabel="label_lblDataCubeForgetInfo" getVisible="AreCredentialsSaved"/>
+									</layoutContainer>
+								</topItems>
+							</group>
+						</task>
+					</category>
+				</taskFormGroup>
+			</firstColumn>
+		</tab>
+	</backstage>
+</customUI>

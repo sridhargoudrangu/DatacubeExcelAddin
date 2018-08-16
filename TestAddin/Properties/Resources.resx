@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CannotQueryDataSources" xml:space="preserve">
+    <value>Unable to query data sources.</value>
+  </data>
+  <data name="CannotQueryHandlers" xml:space="preserve">
+    <value>Unable to query handlers.</value>
+  </data>
+  <data name="CannotQueryIndexServers" xml:space="preserve">
+    <value>Unable to query index servers.</value>
+  </data>
+  <data name="ConnectingToHostname" xml:space="preserve">
+    <value>Connecting to {0}.</value>
+    <comment>part of the 'caption' parameter to CredUIPromptForWindowsCredentials; Displayed in the 'login' window at the top.
+param 0: hostname of the server we're connecting to</comment>
+  </data>
+  <data name="CredComment" xml:space="preserve">
+    <value>Commvault Excel Data Cube Saved Credentials</value>
+    <comment>This is the string displayed in the Windows Credential Manager's entry for our program.</comment>
+  </data>
+  <data name="CredName" xml:space="preserve">
+    <value>commvault_exceldatacubeaddin_savedlogin</value>
+    <comment>This is the name of the credential saved in the Credential Manager.</comment>
+  </data>
+  <data name="CSV" xml:space="preserve">
+    <value>CSV</value>
+  </data>
+  <data name="Database" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="DataCube" xml:space="preserve">
+    <value>Data Cube</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Data Source</value>
+  </data>
+  <data name="Eloqua" xml:space="preserve">
+    <value>Eloqua</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ErrorMsg" xml:space="preserve">
+    <value>error message</value>
+  </data>
+  <data name="ErrorMsgCaps" xml:space="preserve">
+    <value>Error message</value>
+  </data>
+  <data name="ExceptionInLogon" xml:space="preserve">
+    <value>Exception caught while processing logon on server [{0}]: [{1}]</value>
+    <comment>Param 0: hostname
+Param 1: Exception text</comment>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ExportDataCube" xml:space="preserve">
+    <value>Export to Data Cube</value>
+  </data>
+  <data name="FederatedSearch" xml:space="preserve">
+    <value>Federated Search</value>
+  </data>
+  <data name="FileSystem" xml:space="preserve">
+    <value>File System</value>
+  </data>
+  <data name="ForgetCreds" xml:space="preserve">
+    <value>Forget Credentials</value>
+  </data>
+  <data name="Handler" xml:space="preserve">
+    <value>Handler</value>
+  </data>
+  <data name="Hostname" xml:space="preserve">
+    <value>hostname</value>
+    <comment>saved name of the 'hostname' attribute on the credential</comment>
+  </data>
+  <data name="HTTP" xml:space="preserve">
+    <value>HTTP</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ImportDataCube" xml:space="preserve">
+    <value>Import from Data Cube</value>
+  </data>
+  <data name="IndexServer" xml:space="preserve">
+    <value>Index Server</value>
+  </data>
+  <data name="LDAP" xml:space="preserve">
+    <value>LDAP</value>
+  </data>
+  <data name="ListAllDataSources" xml:space="preserve">
+    <value>List all data sources</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout from Data Cube</value>
+  </data>
+  <data name="NAS" xml:space="preserve">
+    <value>NAS</value>
+  </data>
+  <data name="NewWorkbook" xml:space="preserve">
+    <value>A new workbook will be created.</value>
+  </data>
+  <data name="NoActiveWorkbook" xml:space="preserve">
+    <value>You must have a workbook loaded to export.</value>
+    <comment>Displayed in the backstage view when user 'tries' to export data to Data Cube without having any data loaded.</comment>
+  </data>
+  <data name="NoDataSourceSelected" xml:space="preserve">
+    <value>You must have a data source selected in order to import.</value>
+    <comment>Displayed in the backstage view when user 'tries' to import data without giving us a data source first.</comment>
+  </data>
+  <data name="NotLoggedIn" xml:space="preserve">
+    <value>You are not logged in.</value>
+  </data>
+  <data name="OpenDataSource" xml:space="preserve">
+    <value>Open Data Source</value>
+  </data>
+  <data name="PlaceholderText" xml:space="preserve">
+    <value>Placeholder</value>
+  </data>
+  <data name="PleaseLogin" xml:space="preserve">
+    <value>In order to interact with data form Data Cube, please login.</value>
+  </data>
+  <data name="PromptEnterCreds" xml:space="preserve">
+    <value>Enter your credentials to continue.</value>
+    <comment>'message' parameter to CredUIPromptForWindowsCredentials; Displayed in the 'login' window when getting username/password combo</comment>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Salesforce" xml:space="preserve">
+    <value>Salesforce</value>
+  </data>
+  <data name="ShowOnlyTheseTypes" xml:space="preserve">
+    <value>Show only these types of data source</value>
+  </data>
+  <data name="UnableToGetRemoteData" xml:space="preserve">
+    <value>We were unable to properly pull the data from the server.
+Error: {0}</value>
+    <comment>Parameter 0: error message</comment>
+  </data>
+  <data name="WebconsoleHostname" xml:space="preserve">
+    <value>Webconsole Hostname:</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="YouWillBeLoggedOut" xml:space="preserve">
+    <value>You will be logged out after 30 minutes of inactivity.</value>
+  </data>
+  <data name="NewSheet" xml:space="preserve">
+    <value>A new sheet will be created for this import.</value>
+  </data>
+  <data name="SavedLoginFailure" xml:space="preserve">
+    <value>We were unable to log you in using your saved credentials. To continue, please login again.</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Create a New Datasource</value>
+  </data>
+  <data name="CreateNewDatasourceName" xml:space="preserve">
+    <value>Type the name of the new datasource below.</value>
+  </data>
+  <data name="CreateNewDatasourceType" xml:space="preserve">
+    <value>Create what kind of datasource?</value>
+  </data>
+  <data name="CreateNewWhatIndexServer" xml:space="preserve">
+    <value>On which index server should the new datasource be located?</value>
+  </data>
+  <data name="ExportFlavorText" xml:space="preserve">
+    <value />
+    <comment>Displayed below the export header in the backstage view</comment>
+  </data>
+  <data name="HostnameCaps" xml:space="preserve">
+    <value>Hostname</value>
+  </data>
+  <data name="ImportFlavorText" xml:space="preserve">
+    <value />
+    <comment>Displayed below the import header in the backstage view</comment>
+  </data>
+  <data name="NeedHostname" xml:space="preserve">
+    <value>Please enter the hostname of the webconsole server to continue logging in.</value>
+  </data>
+  <data name="RestApiExceptionText" xml:space="preserve">
+    <value>Exception caught while executing rest API [{0}] on host [{1}]. Error message: {2}.</value>
+    <comment>Parameter 0: Api web request partial url (everything following the webconsole API path)
+Parameter 1: Hostname of the webconsole server.
+Parameter 2: Error message from the exception.</comment>
+  </data>
+  <data name="UnknownAPIException" xml:space="preserve">
+    <value>Unknown API "{0}" --&gt; unable to resolve HttpMethod.</value>
+    <comment>Parameter 0: Api path.</comment>
+  </data>
+  <data name="UseExisting" xml:space="preserve">
+    <value>Use an Existing Datasource</value>
+  </data>
+  <data name="UseExistingDataSource" xml:space="preserve">
+    <value>Export to this datasource:</value>
+  </data>
+  <data name="UseExistingIndexServer" xml:space="preserve">
+    <value>Filter by index server:</value>
+  </data>
+  <data name="UseExistingTypeFilterText" xml:space="preserve">
+    <value>Limit search results to this type of datasource:</value>
+  </data>
+  <data name="CreateInstead" xml:space="preserve">
+    <value>Create Instead</value>
+  </data>
+  <data name="ExportInstead" xml:space="preserve">
+    <value>Export Instead</value>
+  </data>
+  <data name="CreateErrorText" xml:space="preserve">
+    <value>Error occured during datasource creation; no new datasource was created.
+Error message: {0}</value>
+    <comment>Parameter 0: Error text from RestAPI method</comment>
+  </data>
+  <data name="CreatePostErrorText" xml:space="preserve">
+    <value>Error occured during data posting; data source created but no data added.
+Error message: {0}</value>
+    <comment>Parameter 0: Error text from RestAPI method</comment>
+  </data>
+  <data name="CreateSuccess" xml:space="preserve">
+    <value>Datasource successfully created. Spreadsheet data successfully posted.</value>
+  </data>
+  <data name="PostErrorText" xml:space="preserve">
+    <value>Error occured during data posting; no data was posted to the datasource.
+Error message: {0}</value>
+    <comment>Parameter 0: Error text from RestAPI method</comment>
+  </data>
+  <data name="PostSuccess" xml:space="preserve">
+    <value>Data successfully posted.</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="UseSelectedRegion" xml:space="preserve">
+    <value>Use selected region instead of whole file.</value>
+  </data>
+  <data name="TruncationWarning" xml:space="preserve">
+    <value>Some data was truncated while importing.
+Fields with length over 32,767 were automatically shortened to fit.</value>
+    <comment>32767 is the maximum number of characters that can fit in an Excel cell.
+Seems like Microsoft uses a short int to hold string length.</comment>
+  </data>
+  <data name="TruncationWarningCaption" xml:space="preserve">
+    <value>Data Truncated</value>
+  </data>
+  <data name="UnableToRetrieveSchema" xml:space="preserve">
+    <value>Unable to retrieve schema for validation.</value>
+  </data>
+  <data name="NumTextWarning" xml:space="preserve">
+    <value>Some numeric data was explicitly converted to text in order to preserve precision.</value>
+  </data>
+  <data name="NumTextWarningCaption" xml:space="preserve">
+    <value>Automatic Conversion</value>
+  </data>
+  <data name="SchemaValidationFailure" xml:space="preserve">
+    <value>The data failed to validate against the datasource's schema. No data was posted.</value>
+  </data>
+  <data name="LoadingBarText" xml:space="preserve">
+    <value>Processing. {0} out of {1} complete.</value>
+    <comment>Parameter 0: how many records have been processed.
+Parameter 1: How many in total there are.</comment>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>No Data</value>
+  </data>
+  <data name="NoDataMessage" xml:space="preserve">
+    <value>The selected datasource seems to have no data assiociated with it.</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="DataFailedTypeCheck" xml:space="preserve">
+    <value>Your dataset has failed the pre-export type validation check.
+Some values in your data are inconsistent with the server-side schema in place on the data source.
+Please check over the schema now and try again after adjusting your data.</value>
+  </data>
+  <data name="DataFailedTypeCheckCaption" xml:space="preserve">
+    <value>Type Check Failed</value>
+  </data>
+  <data name="LoadingFormTitle" xml:space="preserve">
+    <value>Processing Entities</value>
+  </data>
+  <data name="SchemaVerificationRequired" xml:space="preserve">
+    <value>Schema Verification Required</value>
+  </data>
+  <data name="TypeBoolean" xml:space="preserve">
+    <value>Boolean</value>
+  </data>
+  <data name="TypeCheckConflictNotification" xml:space="preserve">
+    <value>The cell which failed the type check is {0}.
+The expected type was {1} but {0} had a {2} in it.</value>
+    <comment>Parameter 0: Offending cell address
+Parameter 1: Expected type
+Parameter 2: Cell's true type</comment>
+  </data>
+  <data name="TypeDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="TypeDouble" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="TypeFloat" xml:space="preserve">
+    <value>Float</value>
+  </data>
+  <data name="TypeInteger" xml:space="preserve">
+    <value>Integer</value>
+  </data>
+  <data name="TypeLong" xml:space="preserve">
+    <value>Long</value>
+  </data>
+  <data name="TypeLongString" xml:space="preserve">
+    <value>Long String</value>
+    <comment>wchar_t*?</comment>
+  </data>
+  <data name="TypeLowercaseString" xml:space="preserve">
+    <value>Lowercase String</value>
+    <comment>?? a lowercase string is a brand new type ??</comment>
+  </data>
+  <data name="TypeString" xml:space="preserve">
+    <value>String</value>
+  </data>
+  <data name="TypeText" xml:space="preserve">
+    <value>Text</value>
+    <comment>??? what's the difference between string and text ???</comment>
+  </data>
+  <data name="TypeTimestamp" xml:space="preserve">
+    <value>Timestamp</value>
+  </data>
+  <data name="UserSchemaValidationFormTitle" xml:space="preserve">
+    <value>User Validation Required</value>
+  </data>
+  <data name="ValidationCreateNew" xml:space="preserve">
+    <value>Please verify that each column's type is correct before proceeding.</value>
+  </data>
+  <data name="ValidationUseExistingNEWCOLUMNS" xml:space="preserve">
+    <value>Data types were inferred for the following unknown columns.
+Please ensure that the correct data types are listed below before clicking continue.</value>
+  </data>
+  <data name="LiveWorkbookSyncError" xml:space="preserve">
+    <value>This workbook has one or more worksheets which cannot be synchronized with the server you are currently logged into.</value>
+  </data>
+  <data name="Facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="MakeLiveWorksheet" xml:space="preserve">
+    <value>Create a live worksheet</value>
+  </data>
+  <data name="Twitter" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="WeWillUseThisSheet" xml:space="preserve">
+    <value>We'll use this sheet for the import.</value>
+  </data>
+  <data name="UnableToGetRemoteDataAmbiguous" xml:space="preserve">
+    <value>We were unable to properly pull the data from the server.</value>
+  </data>
+  <data name="DateOOBWarning" xml:space="preserve">
+    <value>Some date data in this set falls outside the bounds of the numerical datatype used to store it. These offending dates have been converted to textual data to preserve precision.</value>
+  </data>
+  <data name="DateOOBWarningCaption" xml:space="preserve">
+    <value>Date Data Stringified</value>
+  </data>
+  <data name="UnableToUpdateRemoteSchema" xml:space="preserve">
+    <value>An error occured while updating the schema for the newly created data source.
+The data source was created but the schema could not be updated. No data was posted.
+Error: {0}</value>
+    <comment>Param 0: The error/exception text.</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ErrorHeadersNeedAlphaNumericChars" xml:space="preserve">
+    <value>One or more of your headers contain non-alphanumeric characters which are not allowed in a field name.
+Please choose different field names.</value>
+  </data>
+  <data name="WorkbookOpenSyncNotification" xml:space="preserve">
+    <value>The synchronized worksheet {0} is out of date.
+Did you want to pull down updated data from {1} now?</value>
+    <comment>Param 0: Worksheet name
+Param 1: Server hostname</comment>
+  </data>
+  <data name="UnableToContinue" xml:space="preserve">
+    <value>An operation failed and is unable to continue.</value>
+  </data>
+  <data name="UnableToGetRemoteDataNoParam" xml:space="preserve">
+    <value>We were unable to properly pull the data from the server.</value>
+  </data>
+  <data name="ErrNonTextHeader" xml:space="preserve">
+    <value>Header contains non-string value!</value>
+  </data>
+  <data name="ErrSchemaModelInvalidUsage" xml:space="preserve">
+    <value>SchemaModel values are not of type DSFieldType and cannot be jsonified!</value>
+  </data>
+  <data name="ErrTooManyColumns" xml:space="preserve">
+    <value>Excel cannot store more than {0} columns.</value>
+    <comment>Param 0: EXCEL_MAX_COLS</comment>
+  </data>
+  <data name="ErrUnsupportedType" xml:space="preserve">
+    <value>Addin does not support Excel conversions to type {0}</value>
+    <comment>Param 0: the name of the offending type</comment>
+  </data>
+</root>
