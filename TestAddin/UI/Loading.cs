@@ -18,41 +18,40 @@ namespace TestAddin.UI
 		{
 			progressBar1.Maximum = outOf;
 			Text = Resources.LoadingFormTitle;
-			UpdateBar();
+			Value = 0;
 		}
 
-		private void UpdateBar()
+		public int Value
 		{
-			lblProcessing.Text = string.Format(Resources.LoadingBarText, progressBar1.Value, progressBar1.Maximum);
-			Invalidate();
+			get => progressBar1.Value;
+			set
+			{
+				progressBar1.Value = value;
+				lblProcessing.Text = string.Format(Resources.LoadingBarText, progressBar1.Value, progressBar1.Maximum);
+				Invalidate();
+			}
 		}
-
-		private int Value { get => progressBar1.Value; set => progressBar1.Value = value; }
 
 		// The idea here is to never actually use binary + or - but to use += and -= instead
 		// Also: minus should not be used
 		public static Loading operator +(Loading l, int v)
 		{
 			l.Value += v;
-			l.UpdateBar();
 			return l;
 		}
 		public static Loading operator ++(Loading l)
 		{
 			l.Value++;
-			l.UpdateBar();
 			return l;
 		}
 		public static Loading operator -(Loading l, int v)
 		{
 			l.Value -= v;
-			l.UpdateBar();
 			return l;
 		}
 		public static Loading operator --(Loading l)
 		{
 			l.Value--;
-			l.UpdateBar();
 			return l;
 		}
 
