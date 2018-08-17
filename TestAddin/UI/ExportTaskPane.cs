@@ -69,8 +69,8 @@ namespace TestAddin.UI
 			_isr = other._isr;
 			_dsr = other._dsr;
 
-			chkTypeCSV_ue.Checked = other.chkTypeCSV_ue.Checked;
-			chkTypeOpenDataSource_ue.Checked = other.chkTypeOpenDataSource_ue.Checked;
+			//chkTypeCSV_ue.Checked = other.chkTypeCSV_ue.Checked;
+			//chkTypeOpenDataSource_ue.Checked = other.chkTypeOpenDataSource_ue.Checked;
 
 			UpdateIndexServers();
 			cbxIndexServer_cn.SelectedIndex = cbxIndexServer_cn.IndexOf(other.SelectedIndexServer_cn);
@@ -101,11 +101,11 @@ namespace TestAddin.UI
 			btnCreate.Text = Resources.Create;
 			btnExportInstead.Text = Resources.ExportInstead;
 
-			lblDataSourceType_ue.Text = Resources.UseExistingTypeFilterText;
+			//lblDataSourceType_ue.Text = Resources.UseExistingTypeFilterText;
 			lblIndexServer_ue.Text = Resources.UseExistingIndexServer;
 			lblDataSource_ue.Text = Resources.UseExistingDataSource;
-			chkTypeOpenDataSource_ue.Text = Resources.OpenDataSource;
-			chkTypeCSV_ue.Text = Resources.CSV;
+			//chkTypeOpenDataSource_ue.Text = Resources.OpenDataSource;
+			//chkTypeCSV_ue.Text = Resources.CSV;
 			chkUseSelection_ue.Text = Resources.UseSelectedRegion;
 			btnRefresh_ue.Text = Resources.Refresh;
 			btnExport.Text = Resources.Export;
@@ -133,11 +133,11 @@ namespace TestAddin.UI
 				{
 					lblIndexServer_cn.ForeColor = SystemColors.ControlLight;
 					lblDataSource_cn.ForeColor = SystemColors.ControlLight;
-					lblDataSourceType_ue.ForeColor = SystemColors.ControlLight;
+					//lblDataSourceType_ue.ForeColor = SystemColors.ControlLight;
 					lblIndexServer_ue.ForeColor = SystemColors.ControlLight;
 					lblDataSource_ue.ForeColor = SystemColors.ControlLight;
-					chkTypeOpenDataSource_ue.ForeColor = SystemColors.ControlLight;
-					chkTypeCSV_ue.ForeColor = SystemColors.ControlLight;
+					//chkTypeOpenDataSource_ue.ForeColor = SystemColors.ControlLight;
+					//chkTypeCSV_ue.ForeColor = SystemColors.ControlLight;
 					btnRefresh_cn.BackColor = SystemColors.ControlLightLight;
 					btnRefresh_ue.BackColor = SystemColors.ControlLightLight;
 					btnCreateInstead.BackColor = SystemColors.ControlLightLight;
@@ -213,16 +213,16 @@ namespace TestAddin.UI
 
 			IEnumerable<DataSourceInfo> dsi = _dsr.FilterByIndexServer(SelectedIndexServer_ue).GetAllDataSources();
 
-			foreach(DataSourceInfo i in dsi.Where(DataSourceMatchesFilters))
+			foreach(DataSourceInfo i in dsi) // .Where(DataSourceMatchesFilters))
 				cbxDataSource_ue.Add(i);
 
 			if(active != default)
 				cbxDataSource_ue.SelectedIndex = cbxDataSource_ue.IndexOf(active);
 		}
 
-		private bool DataSourceMatchesFilters(DataSourceInfo i)
+		/*private bool DataSourceMatchesFilters(DataSourceInfo i)
 			=> (chkTypeCSV_ue.Checked && i.datasourceType == DataSourceType.CSV)
-			|| (chkTypeOpenDataSource_ue.Checked && i.datasourceType == DataSourceType.OpenDataSource);
+			|| (chkTypeOpenDataSource_ue.Checked && i.datasourceType == DataSourceType.OpenDataSource);*/
 
 		private void CanWeCreateANewDataSource(object sender, EventArgs e) => btnCreate.Enabled = (!string.IsNullOrWhiteSpace(txtDataSourceName_cn.Text) && SelectedIndexServer_cn != default);
 
@@ -234,11 +234,11 @@ namespace TestAddin.UI
 		}
 		private void DataSourceSelected_ue(object sender, EventArgs e) => btnExport.Enabled = true;
 
-		private void TypeFilterChanged_ue(object sender, EventArgs e)
+		/*private void TypeFilterChanged_ue(object sender, EventArgs e)
 		{
 			QueryDataSources();
 			UpdateDataSources();
-		}
+		}*/
 
 		private void BtnExport(object sender, EventArgs e) => Export.Execute(_host, SelectedDataSource.datasourceId, useSelection: chkUseSelection_ue.Checked);
 		private void BtnCreate(object sender, EventArgs e) => Create.Execute(_host, txtDataSourceName_cn.Text, SelectedIndexServer_cn.cloudID, DataSourceType.OpenDataSource, useSelection: chkUseSelection_cn.Checked);

@@ -34,11 +34,8 @@ namespace TestAddin.UI
 			this.btnCreate = new System.Windows.Forms.Button();
 			this.lblDataSource_cn = new System.Windows.Forms.Label();
 			this.txtDataSourceName_cn = new System.Windows.Forms.TextBox();
-			this.lblDataSourceType_ue = new System.Windows.Forms.Label();
 			this.btnRefresh_ue = new System.Windows.Forms.Button();
 			this.btnExport = new System.Windows.Forms.Button();
-			this.chkTypeCSV_ue = new System.Windows.Forms.CheckBox();
-			this.chkTypeOpenDataSource_ue = new System.Windows.Forms.CheckBox();
 			this.lblDataSource_ue = new System.Windows.Forms.Label();
 			this.cbxDataSource_ue = new System.Windows.Forms.ComboBox();
 			this.lblIndexServer_ue = new System.Windows.Forms.Label();
@@ -116,15 +113,6 @@ namespace TestAddin.UI
 			this.txtDataSourceName_cn.TabIndex = 3;
 			this.txtDataSourceName_cn.TextChanged += new System.EventHandler(this.CanWeCreateANewDataSource);
 			// 
-			// lblDataSourceType_ue
-			// 
-			this.lblDataSourceType_ue.AutoSize = true;
-			this.lblDataSourceType_ue.Location = new System.Drawing.Point(3, 73);
-			this.lblDataSourceType_ue.Name = "lblDataSourceType_ue";
-			this.lblDataSourceType_ue.Size = new System.Drawing.Size(116, 13);
-			this.lblDataSourceType_ue.TabIndex = 8;
-			this.lblDataSourceType_ue.Text = "lblDataSourceType_ue";
-			// 
 			// btnRefresh_ue
 			// 
 			this.btnRefresh_ue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -140,7 +128,7 @@ namespace TestAddin.UI
 			// 
 			this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnExport.Enabled = false;
-			this.btnExport.Location = new System.Drawing.Point(234, 200);
+			this.btnExport.Location = new System.Drawing.Point(234, 132);
 			this.btnExport.Name = "btnExport";
 			this.btnExport.Size = new System.Drawing.Size(75, 23);
 			this.btnExport.TabIndex = 6;
@@ -148,36 +136,10 @@ namespace TestAddin.UI
 			this.btnExport.UseVisualStyleBackColor = true;
 			this.btnExport.Click += new System.EventHandler(this.BtnExport);
 			// 
-			// chkTypeCSV_ue
-			// 
-			this.chkTypeCSV_ue.AutoSize = true;
-			this.chkTypeCSV_ue.Checked = true;
-			this.chkTypeCSV_ue.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.chkTypeCSV_ue.Location = new System.Drawing.Point(6, 89);
-			this.chkTypeCSV_ue.Name = "chkTypeCSV_ue";
-			this.chkTypeCSV_ue.Size = new System.Drawing.Size(107, 17);
-			this.chkTypeCSV_ue.TabIndex = 5;
-			this.chkTypeCSV_ue.Text = "chkTypeCSV_ue";
-			this.chkTypeCSV_ue.UseVisualStyleBackColor = true;
-			this.chkTypeCSV_ue.CheckedChanged += new System.EventHandler(this.TypeFilterChanged_ue);
-			// 
-			// chkTypeOpenDataSource_ue
-			// 
-			this.chkTypeOpenDataSource_ue.AutoSize = true;
-			this.chkTypeOpenDataSource_ue.Checked = true;
-			this.chkTypeOpenDataSource_ue.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.chkTypeOpenDataSource_ue.Location = new System.Drawing.Point(6, 112);
-			this.chkTypeOpenDataSource_ue.Name = "chkTypeOpenDataSource_ue";
-			this.chkTypeOpenDataSource_ue.Size = new System.Drawing.Size(169, 17);
-			this.chkTypeOpenDataSource_ue.TabIndex = 4;
-			this.chkTypeOpenDataSource_ue.Text = "chkTypeOpenDataSource_ue";
-			this.chkTypeOpenDataSource_ue.UseVisualStyleBackColor = true;
-			this.chkTypeOpenDataSource_ue.CheckedChanged += new System.EventHandler(this.TypeFilterChanged_ue);
-			// 
 			// lblDataSource_ue
 			// 
 			this.lblDataSource_ue.AutoSize = true;
-			this.lblDataSource_ue.Location = new System.Drawing.Point(3, 144);
+			this.lblDataSource_ue.Location = new System.Drawing.Point(3, 76);
 			this.lblDataSource_ue.Name = "lblDataSource_ue";
 			this.lblDataSource_ue.Size = new System.Drawing.Size(92, 13);
 			this.lblDataSource_ue.TabIndex = 3;
@@ -189,7 +151,7 @@ namespace TestAddin.UI
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbxDataSource_ue.Enabled = false;
 			this.cbxDataSource_ue.FormattingEnabled = true;
-			this.cbxDataSource_ue.Location = new System.Drawing.Point(3, 160);
+			this.cbxDataSource_ue.Location = new System.Drawing.Point(3, 92);
 			this.cbxDataSource_ue.Name = "cbxDataSource_ue";
 			this.cbxDataSource_ue.Size = new System.Drawing.Size(306, 21);
 			this.cbxDataSource_ue.TabIndex = 2;
@@ -258,13 +220,10 @@ namespace TestAddin.UI
 			this.panExport.Controls.Add(this.btnCreateInstead);
 			this.panExport.Controls.Add(this.lblIndexServer_ue);
 			this.panExport.Controls.Add(this.cbxIndexServer_ue);
-			this.panExport.Controls.Add(this.lblDataSourceType_ue);
 			this.panExport.Controls.Add(this.cbxDataSource_ue);
 			this.panExport.Controls.Add(this.btnRefresh_ue);
 			this.panExport.Controls.Add(this.lblDataSource_ue);
 			this.panExport.Controls.Add(this.btnExport);
-			this.panExport.Controls.Add(this.chkTypeOpenDataSource_ue);
-			this.panExport.Controls.Add(this.chkTypeCSV_ue);
 			this.panExport.Location = new System.Drawing.Point(3, 3);
 			this.panExport.Name = "panExport";
 			this.panExport.Size = new System.Drawing.Size(319, 312);
@@ -273,7 +232,7 @@ namespace TestAddin.UI
 			// chkUseSelection_ue
 			// 
 			this.chkUseSelection_ue.AutoSize = true;
-			this.chkUseSelection_ue.Location = new System.Drawing.Point(3, 229);
+			this.chkUseSelection_ue.Location = new System.Drawing.Point(3, 161);
 			this.chkUseSelection_ue.Name = "chkUseSelection_ue";
 			this.chkUseSelection_ue.Size = new System.Drawing.Size(125, 17);
 			this.chkUseSelection_ue.TabIndex = 15;
@@ -282,7 +241,7 @@ namespace TestAddin.UI
 			// 
 			// btnCreateInstead
 			// 
-			this.btnCreateInstead.Location = new System.Drawing.Point(3, 200);
+			this.btnCreateInstead.Location = new System.Drawing.Point(3, 132);
 			this.btnCreateInstead.Name = "btnCreateInstead";
 			this.btnCreateInstead.Size = new System.Drawing.Size(100, 23);
 			this.btnCreateInstead.TabIndex = 13;
@@ -325,15 +284,12 @@ namespace TestAddin.UI
 		private System.Windows.Forms.ComboBox cbxIndexServer_ue;
 		private System.Windows.Forms.Label lblDataSource_ue;
 		private System.Windows.Forms.ComboBox cbxDataSource_ue;
-		private System.Windows.Forms.CheckBox chkTypeCSV_ue;
-		private System.Windows.Forms.CheckBox chkTypeOpenDataSource_ue;
 		private System.Windows.Forms.Button btnRefresh_ue;
 		private System.Windows.Forms.Button btnExport;
 		private System.Windows.Forms.Button btnRefresh_cn;
 		private System.Windows.Forms.Label lblIndexServer_cn;
 		private System.Windows.Forms.ComboBox cbxIndexServer_cn;
 		private System.Windows.Forms.Button btnCreate;
-		private System.Windows.Forms.Label lblDataSourceType_ue;
 		private System.Windows.Forms.Panel panCreate;
 		private System.Windows.Forms.Panel panExport;
 		private System.Windows.Forms.Button btnExportInstead;

@@ -20,8 +20,8 @@ namespace TestAddin.ACTIONS
 	static class Import
 	{
 
+		// This should be a power of two
 		private const int DIVISION_FACTOR = 256;
-		private const int CHUNK_SIZE = 4096;
 		public static bool Underway = false;
 
 		public static void Execute(string host, Handler h, bool makelive)
@@ -85,8 +85,6 @@ namespace TestAddin.ACTIONS
 				if(addANewWorksheet) Useful.Worksheets.Add();
 			}
 
-			
-
 			Underway = true;
 			using(Loading progress = new Loading(max))
 			using(TextFieldParser parser = new TextFieldParser(input))
@@ -116,9 +114,11 @@ namespace TestAddin.ACTIONS
 
 						string[] data = parser.ReadFields();
 
+						if(row % (Useful.EXCEL_MAX_ROWS / (DIVISION_FACTOR * 4)) == 0)
+							System.Windows.Forms.Application.DoEvents();
+
 						if(row % (Useful.EXCEL_MAX_ROWS / DIVISION_FACTOR) == 0)
 						{
-							System.Windows.Forms.Application.DoEvents();
 							Useful.ActiveSheet.Cell(1 + row - (Useful.EXCEL_MAX_ROWS / DIVISION_FACTOR), 1).Resize[objs.GetUpperBound(0) + 1, objs.GetUpperBound(1) + 1].Value2 = objs;
 						}
 

@@ -19,6 +19,7 @@ namespace TestAddin.UI
 		{
 			progressBar1.Maximum = outOf;
 			Text = Resources.LoadingFormTitle;
+			btnCancel.Text = Resources.Cancel;
 			Value = 0;
 		}
 
