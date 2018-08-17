@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestAddin.Properties;
 using TestAddin.UI;
+using System.Windows.Forms;
 
 using Microsoft.VisualBasic.FileIO;
 
@@ -66,7 +67,6 @@ namespace TestAddin.ACTIONS
 
 			#endregion
 
-
 			void FinalizeWorksheet(bool addANewWorksheet = true)
 			{
 				// This method cleans out the system columns we pulled down and sets up
@@ -85,6 +85,9 @@ namespace TestAddin.ACTIONS
 				if(addANewWorksheet) Useful.Worksheets.Add();
 			}
 
+			
+
+			Underway = true;
 			using(Loading progress = new Loading(max))
 			using(TextFieldParser parser = new TextFieldParser(input))
 			using(new ExcelNoScreenUpdate())
@@ -100,6 +103,7 @@ namespace TestAddin.ACTIONS
 
 				while(parser.HasMoreData())
 				{
+					if(!Underway) return;
 					object[,] objs = new object[Useful.EXCEL_MAX_ROWS / DIVISION_FACTOR, headers.Length];
 
 					for(int i = 0; i < headers.Length; i++)
@@ -108,13 +112,20 @@ namespace TestAddin.ACTIONS
 					int row;
 					for(row = 1; parser.HasMoreData() && row < Useful.EXCEL_MAX_ROWS; row++, progress.Value++)
 					{
+						if(!Underway) return;
+
 						string[] data = parser.ReadFields();
 
 						if(row % (Useful.EXCEL_MAX_ROWS / DIVISION_FACTOR) == 0)
+						{
+							System.Windows.Forms.Application.DoEvents();
 							Useful.ActiveSheet.Cell(1 + row - (Useful.EXCEL_MAX_ROWS / DIVISION_FACTOR), 1).Resize[objs.GetUpperBound(0) + 1, objs.GetUpperBound(1) + 1].Value2 = objs;
+						}
 
 						for(int col = 0; col < data.Length; col++) // [string -> *] type conversion
 						{
+							if(!Underway) return;
+
 							object InterpretType(string tgt)
 							{
 								if(long.TryParse(tgt, out long _long) && headers[col] != "_version_")
@@ -156,6 +167,7 @@ namespace TestAddin.ACTIONS
 				}
 			}
 
+			Underway = false;
 			if(truncated) Useful.Error(Resources.TruncationWarning, Resources.TruncationWarningCaption, MessageBoxIcon.Information);
 			if(numtext) Useful.Error(Resources.NumTextWarning, Resources.NumTextWarningCaption, MessageBoxIcon.Information);
 			if(dateoob) Useful.Error(Resources.DateOOBWarning, Resources.DateOOBWarningCaption, MessageBoxIcon.Information);
