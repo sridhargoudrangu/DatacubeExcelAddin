@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestAddin.Properties;
 using TestAddin.UI;
-using System.Windows.Forms;
 
 using Microsoft.VisualBasic.FileIO;
 
